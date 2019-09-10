@@ -50,13 +50,13 @@ classdef Maripets < handle
 %             obj.roi_range.ori_x = [40 300];
 %             obj.roi_range.ori_y = [5 5];
             obj.roi_range.ori_x = [156 416];
-            obj.roi_range.ori_y = 50*[1 1];
+            obj.roi_range.ori_y = [50 50];
 %             obj.roi_range.ori_y = [170 170];
             obj.roi_range.width = [180 180];
             obj.roi_range.height = [140 140];
 
             obj.pupil_range.ori_x = [156 416];
-            obj.pupil_range.ori_y = [170 170];
+            obj.pupil_range.ori_y = [50 50];
             obj.pupil_range.width = [180 180];
             obj.pupil_range.height = [140 140];
 
