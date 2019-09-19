@@ -7,6 +7,7 @@ function pupil_detect(obj)
         obj.output.pupil_center_y(id) = 0;
         obj.output.pupil_radius(id) = 0;
         obj.output.pupil_metric(id) = 0;
+        obj.status.last_pupil_detected(id) = 0; 
     else
            
         if obj.status.last_pupil_detected(id)
@@ -44,14 +45,13 @@ function pupil_detect(obj)
         mean_mag = mean(Gmag(:));
         
         Gmag(:) = Gmag > (mean_mag + 0.01);
-
+        
         [centers, radii, metric] =...
         imfindcircles(logical(Gmag), [obj.pupil_range.min_radius(id) obj.pupil_range.max_radius(id)],...
         'ObjectPolarity', 'dark',...
         'Sensitivity', 0.9);
 
         if ~isempty(radii)
-
             obj.output.pupil_radius(id) = radii(1);
             obj.output.pupil_center_x(id) = centers(1, 1);
             obj.output.pupil_center_y(id) = centers(1, 2);
