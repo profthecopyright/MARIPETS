@@ -44,7 +44,8 @@ function pupil_detect(obj)
         Gmag(:) = Gmag / max_mag;
         mean_mag = mean(Gmag(:));
         
-        Gmag(:) = Gmag > (mean_mag + 0.01);
+        %Gmag(:) = Gmag > (mean_mag + 0.01);
+        Gmag(:) = Gmag > (prctile(Gmag(:), 90));
         
         [centers, radii, metric] =...
         imfindcircles(logical(Gmag), [obj.pupil_range.min_radius(id) obj.pupil_range.max_radius(id)],...
