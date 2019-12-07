@@ -61,10 +61,11 @@ classdef Maripets < handle
             obj.pupil_range.height = [140 140];
 
             obj.pupil_range.min_radius = [20 20];
-            obj.pupil_range.max_radius = [40 40];
+%             obj.pupil_range.max_radius = [40 40];
+            obj.pupil_range.max_radius = [55 55];
             
             obj.pupil_range.lower_bound = [20 20];
-            obj.pupil_range.upper_bound = [40 40];
+            obj.pupil_range.upper_bound = [55 55];
 
             obj.pupil_range.min_opening = [20 20]; % min eyelid height for pupil detect
             
